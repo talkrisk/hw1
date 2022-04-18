@@ -136,7 +136,7 @@ DROP TABLE IF EXISTS actor;
 --CREATE TABLE
 
 CREATE TABLE movies(
-    movied_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    movie_id INTEGER PRIMARY KEY AUTOINCREMENT,
     title TEXT,
     year_released TEXT,
     mpaa_rating TEXT,
@@ -190,15 +190,14 @@ VALUES
 .print "======"
 .print ""
 
-SELECT movies.title, movies.year_released, movies.mpaa_rating, studio.studio_nameFROM movies INNER JOIN studio ON movies.studio_id = studio.studio_id;
+SELECT movies.title, movies.year_released, movies.mpaa_rating, studio.studio_name FROM movies INNER JOIN studio ON movies.studio_id = studio.studio_id;
 
 .print ""
 .print "Top Cast"
 .print "======"
 .print ""
 
-SELECT movies.title, actor.actor_name, actor.charachter_name
-FROM actor INNER JOIN movies ON movies.movie_id = actor.movie_id;
+SELECT movies.title, actor.actor_name, actor.charachter_name FROM actor INNER JOIN movies ON movies.movie_id = actor.movie_id;
 
 
 
